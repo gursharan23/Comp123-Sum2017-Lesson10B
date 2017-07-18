@@ -9,7 +9,7 @@ using System.Text;
  * Date:July11,2017
  * Description: This is the super human class extends the human abstract class
  * Version:0.1 Created the super human class
- * Version:0.7 Added private getPowerIndex method 
+ * Version:0.7 Added GetPower method 
  */
 namespace Comp123_Sum2017_Lesson10B
 {
@@ -100,5 +100,20 @@ namespace Comp123_Sum2017_Lesson10B
         {
             Console.WriteLine("Not Implemented");
         }
+
+        /// <summary>
+        /// This method returns a power object that matches the power name.
+        /// If the power is not found then it will return Power not found
+        /// </summary>
+        /// <param name="powername"></param>
+        /// <returns></returns>
+        public Power getPower(string powername)
+        {
+            int index = this._getPowerIndex(powername);
+            if (index != -1)
+            { return this.Powers[index]; }
+            return new Power("Power not found", 0);//means the power not found.
+        }
+        
     }
 }
