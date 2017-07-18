@@ -29,6 +29,39 @@ namespace Comp123_Sum2017_Lesson10B
             Console.WriteLine(supervillain.ToString());
             Console.WriteLine("Malice: " + supervillain.Malice);
 
+            Console.WriteLine();
+            if (superHero is SuperHero)
+            {
+                Console.WriteLine("SuperHero is a superHERO");
+            }
+            Console.WriteLine();
+            if (superHero is SuperHuman)
+            {
+                Console.WriteLine("SuperHero is a superhuman");
+            }
+            Console.WriteLine();
+            if (superHero is Human)
+            {
+                Console.WriteLine("SuperHero is a human");
+            }
+           
+
+
+            Console.WriteLine();
+            if (superHero is object)
+            {
+                Console.WriteLine("SuperHero is an object");
+            }
+            Console.WriteLine();
+            if (superHero is IHasKarma)
+            {
+                Console.WriteLine("SuperHero has Karma");
+            }
+            Console.WriteLine();
+            if (superHero is SuperVillain)
+            {
+                Console.WriteLine("SuperHero is not a supervillain");
+            }
         }
     }
 }
