@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 /*
  * Name:Gursharan Singh
  * Date:July11,2017
- * Version:0.1 Implemented SuperVillain Class
+ * Version:0.9 Implemented SuperVillain <> overloaded operators
  -*/
 
 namespace Comp123_Sum2017_Lesson10B
@@ -24,13 +24,21 @@ namespace Comp123_Sum2017_Lesson10B
             Console.WriteLine("Karma: " + superHero.Karma);
             Console.WriteLine("\nSuperVillain\n");
             SuperVillain supervillain = new SuperVillain("Joker", 1);
-            supervillain.AddedPower("Doomsday", 10);
+            supervillain.AddedPower("Doomsday", 30);
             supervillain.AddedPower("Unpredictable", 15);
+            supervillain.AddedPower("CombatSenses ", 20);
             Console.WriteLine(supervillain.ToString());
             Console.WriteLine("Malice: " + supervillain.Malice);
 
-            Console.WriteLine(supervillain._getPowerIndex("Doomsday"));
-            
+            if (supervillain.getPower("Doomsday") > supervillain.getPower("Unpredictable"))
+            {
+                Console.WriteLine("Doomsday is more powerful");
+            }
+            if (supervillain.getPower("CombatSenses") > supervillain.getPower("Unpredictable"))
+            {
+                Console.WriteLine("CombatSenses is more powerful");
+            }
+            else { Console.WriteLine("Combat senses is weaker than unpredictable"); }
         }
     }
 }
