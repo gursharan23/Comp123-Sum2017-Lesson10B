@@ -9,7 +9,7 @@ using System.Text;
  * Date:July11,2017
  * Description: This is the super human class extends the human abstract class
  * Version:0.1 Created the super human class
- * Version:0.6 Added Stub  method DisplaySkills to confirm to Human Abstract Superclass
+ * Version:0.7 Added private getPowerIndex method 
  */
 namespace Comp123_Sum2017_Lesson10B
 {
@@ -38,6 +38,29 @@ namespace Comp123_Sum2017_Lesson10B
         private void _initializer()
         {
             this._powers = new List<Power>();//creates an empty list
+        }
+        /// <summary>
+        /// This private method returns the index of the power name in th power list
+        /// if not found it returns -1
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns>Returns the index of the power in the power list by name</returns>
+        private int _getPowerIndex(string name)
+        {
+            int index = 0;
+            foreach (Power power in this.Powers)
+            {
+                if (name.Equals(power.Name))
+                {
+                    break;
+                }
+                index++;
+                if (this.Powers.Count == index)
+                {
+                    index = -1;//This means that we did not find the power list.
+                }
+            }
+            return index;
         }
         //Public methods
         public void AddedPower(string name, int rank)
